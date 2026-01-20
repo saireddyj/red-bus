@@ -1,0 +1,101 @@
+using System;
+using System.Collections.Generic;
+
+namespace BookingSystem
+{
+    class Program
+    {
+        static List<Booking> bookings = new List<Booking>();
+
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("=== BOOKING SYSTEM ===");
+                Console.WriteLine("1. Create Booking");
+                Console.WriteLine("2. View Bookings");
+                Console.WriteLine("3. Exit");
+                Console.Write("Select option: ");
+
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        CreateBooking();
+                        break;
+                    case "2":
+                        ViewBookings();
+                        break;
+                    case "3":
+                        return;
+                    default:
+                        Console.WriteLine("Invalid choice!");
+                        Console.ReadKey();
+                        break;
+                }
+            }
+        }
+
+        static void CreateBooking()
+        {
+            Console.Clear();
+            Booking booking = new Booking();
+
+            Console.Write("Full Name: ");
+            booking.FullName = Console.ReadLine();
+
+            Console.Write("Email: ");
+            booking.Email = Console.ReadLine();
+
+            Console.Write("Phone: ");
+            booking.Phone = Console.ReadLine();
+
+            Console.Write("Booking Date (yyyy-mm-dd): ");
+            booking.BookingDate = DateTime.Parse(Console.ReadLine());
+
+            Console.Write("Service (Hotel / Appointment / Event): ");
+            booking.Service = Console.ReadLine();
+
+            bookings.Add(booking);
+
+            Console.WriteLine("\nBooking saved successfully!");
+            Console.ReadKey();
+        }
+
+        static void ViewBookings()
+        {
+            Console.Clear();
+            Console.WriteLine("=== ALL BOOKINGS ===\n");
+
+            if (bookings.Count == 0)
+            {
+                Console.WriteLine("No bookings found.");
+            }
+            else
+            {
+                foreach (var b in bookings)
+                {
+                    Console.WriteLine($"Name: {b.FullName}");
+                    Console.WriteLine($"Email: {b.Email}");
+                    Console.WriteLine($"Phone: {b.Phone}");
+                    Console.WriteLine($"Date: {b.BookingDate:yyyy-MM-dd}");
+                    Console.WriteLine($"Service: {b.Service}");
+                    Console.WriteLine("------------------------");
+                }
+            }
+
+            Console.ReadKey();
+        }
+    }
+
+    class Booking
+    {
+        public string FullName { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public DateTime BookingDate { get; set; }
+        public string Service { get; set; }
+    }
+}
