@@ -2,11 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Booking Page</title>
+development
+    <title>Registration</title>
+=======
+    <title>Booking Page</title> main
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         body {
+ development
+            font-family: Arial, sans-serif;
+            background: #f2f4f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .register-box {
+            background: #fff;
+            padding: 25px;
+            width: 350px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .register-box h2;
             font-family: Arial, Helvetica, sans-serif;
             background: #f4f6f8;
             margin: 0;
@@ -23,6 +44,7 @@
         }
 
         h2 {
+ main
             text-align: center;
             margin-bottom: 20px;
         }
@@ -30,6 +52,17 @@
         label {
             font-weight: bold;
             display: block;
+ development
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+
             margin-top: 15px;
         }
 
@@ -44,10 +77,29 @@
 
         textarea {
             resize: vertical;
+ main
         }
 
         button {
             margin-top: 20px;
+ development
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 15px;
             background-color: #007bff;
             color: #ffffff;
             border: none;
@@ -64,11 +116,41 @@
             text-align: center;
             margin-top: 15px;
             display: none;
+ main
         }
     </style>
 </head>
 <body>
 
+ development
+<div class="register-box">
+    <h2>Register</h2>
+
+    <form action="register.php" method="post">
+        <label>Full Name</label>
+        <input type="text" name="fullname" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Username</label>
+        <input type="text" name="username" required>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+        <label>Confirm Password</label>
+        <input type="password" name="confirm_password" required>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="login.html">Login</a></p>
+</div>
+
+</body>
+</html>
+=======
 <div class="container">
     <h2>Booking Form</h2>
 
@@ -111,3 +193,4 @@
         // Simple confirmation
         document.getElementById("successMessage").style.display = "block";
         this.
+ main

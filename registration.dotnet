@@ -1,4 +1,17 @@
 using System;
+ development
+
+class Register
+{
+    static void Main()
+    {
+        Console.Write("Username: ");
+        string username = Console.ReadLine();
+
+        Console.Write("Password: ");
+        string password = Console.ReadLine();
+
+        Console.WriteLine("Registration successful!");
 using System.Collections.Generic;
 
 namespace BookingSystem
@@ -97,5 +110,6 @@ namespace BookingSystem
         public string Phone { get; set; }
         public DateTime BookingDate { get; set; }
         public string Service { get; set; }
+ main
     }
 }
